@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranit & Shweta Biking Trip / HYROX 2027 Prep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f2ea;
+      --paper: #fffaf2;
+      --card: #ffffff;
+      --ink: #1f241f;
+      --muted: #6f726a;
+      --line: #e6ddcf;
+      --forest: #234f37;
+      --forest-2: #2f7a52;
+      --sage: #dfeadc;
+      --gold: #d99b3d;
+      --rose: #f2d7c9;
+      --lake: #dbeafe;
+      --sky: #e0f2fe;
+      --stone: #f3f0ea;
+      --geyser: #fee2e2;
+      --bike: #dbeafe;
+      --hike: #dcfce7;
+      --paddle: #cffafe;
+      --drive: #ffedd5;
+      --wildlife: #fef3c7;
+      --night: #ede9fe;
+      --shadow: 0 18px 50px rgba(35, 79, 55, 0.12);
+      --radius: 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(217, 155, 61, 0.18), transparent 32rem),
+        radial-gradient(circle at 80% 8%, rgba(47, 122, 82, 0.16), transparent 28rem),
+        linear-gradient(180deg, #f7f2ea 0%, #f4efe6 100%);
+      line-height: 1.6;
+      padding-bottom: 86px;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin: 24px auto 26px;
+      border-radius: 34px;
+      min-height: 500px;
+      background:
+        linear-gradient(135deg, rgba(12, 39, 27, 0.92), rgba(35, 79, 55, 0.82)),
+        linear-gradient(135deg, #2f7a52, #8fbf8b);
+      box-shadow: var(--shadow);
+      color: white;
+      padding: 32px;
+      display: grid;
+      align-items: end;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255,255,255,0.18), transparent 18rem),
+        linear-gradient(145deg, transparent 0 55%, rgba(255,255,255,0.13) 55.4% 56.2%, transparent 56.6%),
+        linear-gradient(152deg, transparent 0 62%, rgba(255,255,255,0.11) 62.4% 63.3%, transparent 63.7%);
+      pointer-events: none;
+    }
+
+    .mountains {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 230px;
+      opacity: 0.72;
+      pointer-events: none;
+    }
+
+    .mountains svg { width: 100%; height: 100%; display: block; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 38px 10px 8px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(14px);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(38px, 7vw, 82px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      max-width: 860px;
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.84);
+      margin-bottom: 22px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .panel {
+      background: rgba(255,250,242,0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .panel h2,
+    .section-title h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .panel p { color: var(--muted); font-size: 14px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .mini-map {
+      display: grid;
+      gap: 10px;
+      counter-reset: route;
+      margin-top: 4px;
+    }
+
+    .route-step {
+      counter-increment: route;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .route-step::before {
+      content: counter(route);
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--forest);
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .route-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+
+    .route-card b { display: block; font-size: 14px; }
+    .route-card small { color: var(--muted); }
+
+    .section { margin: 34px 0; }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      padding: 0 4px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 14px;
+    }
+
+    .days { display: grid; gap: 18px; }
+
+    .day-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .day-head {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 22px;
+      background: linear-gradient(135deg, #ffffff, #fbf6ed);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .day-num {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--forest);
+      color: white;
+      font-size: 22px;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(35,79,55,0.18);
+    }
+
+    .day-head h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .day-head p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .day-theme {
+      text-align: right;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 800;
+      color: var(--forest);
+      background: var(--sage);
+      padding: 8px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .timeline { padding: 8px 22px 22px; }
+
+    .item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    .item:last-child { border-bottom: none; }
+
+    .time {
+      color: var(--forest);
+      font-weight: 800;
+      font-size: 13px;
+      padding-top: 2px;
+    }
+
+    .item-main h4 { font-size: 16px; margin-bottom: 4px; }
+
+    .item-main p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 9px;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .tag.bike { background: var(--bike); color: #1e40af; }
+    .tag.hike { background: var(--hike); color: #166534; }
+    .tag.paddle { background: var(--paddle); color: #155e75; }
+    .tag.drive { background: var(--drive); color: #9a3412; }
+    .tag.geyser { background: var(--geyser); color: #991b1b; }
+    .tag.wildlife { background: var(--wildlife); color: #92400e; }
+    .tag.sleep { background: var(--night); color: #5b21b6; }
+    .tag.food { background: #fef3c7; color: #92400e; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 12px 34px rgba(35,79,55,0.08);
+    }
+
+    .mini-card .emoji {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--sage);
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .mini-card h3 { font-size: 16px; margin-bottom: 7px; }
+
+    .mini-card p,
+    .mini-card li { font-size: 13px; color: var(--muted); }
+
+    .mini-card ul { padding-left: 18px; margin-top: 8px; }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0 !important;
+      margin-top: 10px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .contact-list li {
+      color: var(--ink);
+      background: var(--stone);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 8px 10px;
+    }
+
+    .contact-list b {
+      color: var(--forest);
+      display: inline-block;
+      min-width: 64px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stay-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .stay-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 12px 34px rgba(35,79,55,0.08);
+    }
+
+    .stay-card.recommended {
+      border-color: rgba(35,79,55,0.35);
+      background: linear-gradient(180deg, #ffffff, #fbf7ee);
+    }
+
+    .stay-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: var(--sage);
+      color: var(--forest);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .stay-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .stay-card p,
+    .stay-card li { font-size: 13px; color: var(--muted); }
+    .stay-card ul { padding-left: 18px; margin: 10px 0; }
+
+    .stay-link {
+      display: inline-flex;
+      margin-top: 10px;
+      color: var(--forest);
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .verdict {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: var(--stone);
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .check {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 13px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+    }
+
+    .check input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid #cfc7ba;
+      border-radius: 7px;
+      flex: 0 0 auto;
+      margin-top: 1px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .check input:checked { background: var(--forest); border-color: var(--forest); }
+
+    .check input:checked::after {
+      content: '✓';
+      color: white;
+      font-weight: 800;
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+    }
+
+    .footer-note {
+      background: linear-gradient(135deg, var(--forest), #163524);
+      color: white;
+      border-radius: 28px;
+      padding: 26px;
+      margin: 34px 0 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .footer-note h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .footer-note p { color: rgba(255,255,255,0.8); max-width: 780px; }
+
+    .progress {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--line);
+      padding: 13px 18px;
+    }
+
+    .progress-inner {
+      width: min(1120px, calc(100% - 10px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .progress-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+      white-space: nowrap;
+    }
+
+    .track {
+      height: 8px;
+      flex: 1;
+      border-radius: 999px;
+      background: var(--line);
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--forest), var(--gold));
+      transition: width 0.25s ease;
+    }
+
+    .progress-count {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+      width: 54px;
+      text-align: right;
+    }
+
+    @media (max-width: 850px) {
+      .top-grid,
+      .cards-grid,
+      .checklist,
+      .stay-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .hero { min-height: 560px; padding: 24px; }
+      .day-head { grid-template-columns: auto 1fr; }
+      .day-theme { grid-column: 1 / -1; text-align: left; width: fit-content; }
+      .item { grid-template-columns: 1fr; gap: 5px; }
+      .time { font-size: 12px; }
+    }
+
+    @media print {
+      body { background: white; padding-bottom: 24px; }
+      .progress { display: none; }
+      .hero, .panel, .day-card, .mini-card, .footer-note { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="mountains" aria-hidden="true">
+        <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
+          <path d="M0 220 L120 140 L205 190 L310 70 L425 190 L530 95 L650 210 L760 105 L895 220 L1020 120 L1200 230 L1200 260 L0 260 Z" fill="rgba(255,255,255,0.22)"/>
+          <path d="M0 245 L160 165 L270 220 L400 118 L520 235 L635 155 L740 238 L875 160 L990 230 L1120 170 L1200 225 L1200 260 L0 260 Z" fill="rgba(255,255,255,0.28)"/>
+          <path d="M0 252 L140 210 L260 235 L360 190 L480 245 L610 202 L725 248 L850 205 L980 240 L1100 215 L1200 242 L1200 260 L0 260 Z" fill="rgba(255,250,242,0.92)"/>
+        </svg>
+      </div>
+      <div class="hero-content">
+        <div class="eyebrow">🚴‍♀️ National Park Adventure · HYROX 2027 energy</div>
+        <h1>Pranit & Shweta Biking Trip</h1>
+        <p class="subtitle">Grand Teton + Yellowstone over Juneteenth weekend — biking, paddling, hiking, geyser walks, canyon views, and just enough chaos to count as training.</p>
+        <div class="hero-pills">
+          <span class="pill">📍 SLC → Teton base → Yellowstone</span>
+          <span class="pill">🗓 Jun 18–21, 2026</span>
+          <span class="pill">🔥 HYROX 2027 Prep</span>
+          <span class="pill">🌲 4 days · 3 nights</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="top-grid">
+      <div class="panel">
+        <h2>The vibe</h2>
+        <p>This is not a sit-in-the-car sightseeing trip. Every day has movement: one strong bike ride, one Grand Teton hike, one optional paddle/lake walk, Yellowstone geyser walks, and a canyon/wildlife finale. The plan is now comfort-smart too: 2 nights in the Grand Teton/Jackson area, then 1 night near Yellowstone, so you are not packing up every single morning.</p>
+        <div class="stats">
+          <div class="stat"><strong>4</strong><span>Days</span></div>
+          <div class="stat"><strong>1</strong><span>Bike Day</span></div>
+          <div class="stat"><strong>1</strong><span>GT Hike</span></div>
+          <div class="stat"><strong>2</strong><span>Yellowstone Days</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Best lodging flow</h2>
+        <div class="mini-map">
+          <div class="route-step"><div class="route-card"><b>Nights 1–2 · Best: Moose / Jackson · Budget backup: Victor / Driggs</b><small>Moose/Jackson are best for the itinerary. Victor/Driggs can work if the stay is better or cheaper, but expect more driving over Teton Pass.</small></div></div>
+          <div class="route-step"><div class="route-card"><b>Night 3 · West Yellowstone / Canyon / Old Faithful</b><small>Move once, then wake up closer to Yellowstone canyon and wildlife for Day 4.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><div><h2>4-day itinerary</h2><p>Designed to keep the sporty activities from the original checklist while reducing backtracking and holiday-weekend stress.</p></div></div>
+      <div class="days">
+        <article class="day-card"><div class="day-head"><div class="day-num">1</div><div><h3>Thu Jun 18 · SLC → Grand Teton</h3><p>Arrive, bike the Tetons, and end with a soft golden-hour view.</p></div><div class="day-theme">Bike day</div></div><div class="timeline">
+          <div class="item"><div class="time">5:00–6:00 AM</div><div class="item-main"><h4>Leave Salt Lake City</h4><p>Take the scenic Bear Lake / US-89 route if you want a prettier drive. Pack breakfast, snacks, water, and patience for holiday traffic.</p><div class="tags"><span class="tag drive">Drive</span></div></div></div>
+          <div class="item"><div class="time">Late morning</div><div class="item-main"><h4>Arrive at Grand Teton base</h4><p><b>Best stay:</b> Moose or Jackson. <b>Airbnb backup:</b> Taylor Mountain Peak-A-Boo Suite 3 in Victor is the better of the two options you found. Driggs private room is a secondary backup if the price is much better.</p><div class="tags"><span class="tag food">Food</span><span class="tag sleep">Night 1 stay</span><span class="tag sleep">Victor backup</span></div></div></div>
+          <div class="item"><div class="time">Afternoon</div><div class="item-main"><h4>Pick up bikes + ride Moose / Dornans → Jenny Lake pathway</h4><p>Reserve bikes before the trip. Options: <b>Teton Village Sports</b> — 307-733-2181 · tetonvillagesports.com, or <b>Dornan's Adventure Sports</b> — 307-733-3307 · dornans.com. Ask for helmets and a bike rack if needed. Ride 6–12 miles total if tired, up to around 15 miles if you feel strong.</p><div class="tags"><span class="tag bike">Bike rental</span><span class="tag bike">6–15 mi</span><span class="tag hike">HYROX legs</span><span class="tag sleep">Teton Village Sports</span><span class="tag sleep">Dornan's</span></div></div></div>
+          <div class="item"><div class="time">Sunset</div><div class="item-main"><h4>Schwabacher Landing or Snake River Overlook</h4><p>Keep the evening easy. No extra hike. Just mountains, reflections, photos, and a calm first-night dinner.</p><div class="tags"><span class="tag wildlife">Scenic</span></div></div></div>
+        </div></article>
+
+        <article class="day-card"><div class="day-head"><div class="day-num">2</div><div><h3>Fri Jun 19 · Grand Teton hike + lake day</h3><p>Classic Jenny Lake hike, then a lake reset — with the comfort of returning to the same Grand Teton base.</p></div><div class="day-theme">Hike + paddle</div></div><div class="timeline">
+          <div class="item"><div class="time">Early</div><div class="item-main"><h4>Jenny Lake boat + Hidden Falls + Inspiration Point</h4><p>Go early and reserve the <b>Jenny Lake Boat Shuttle</b> if you plan to use it: 307-734-9227 · jennylakeboating.com. Hike to Hidden Falls, continue to Inspiration Point, and optionally walk a short way into Cascade Canyon before turning back.</p><div class="tags"><span class="tag hike">Hike</span><span class="tag hike">Classic GT</span><span class="tag sleep">Jenny Lake Boating</span></div></div></div>
+          <div class="item"><div class="time">Late morning</div><div class="item-main"><h4>String Lake / Leigh Lake</h4><p>After the hike, shift to a calmer lake activity. Walk toward Leigh Lake, or do a short SUP/kayak session if parking, weather, and energy are good. If paddling, use <b>SUPerior Paddlesports</b> — superiorpaddlesports.com — and remember the <b>non-motorized boat permit</b>.</p><div class="tags"><span class="tag paddle">Optional SUP/kayak</span><span class="tag paddle">SUPerior Paddlesports</span><span class="tag paddle">Boat permit</span><span class="tag hike">Lake walk</span></div></div></div>
+          <div class="item"><div class="time">Lunch</div><div class="item-main"><h4>Picnic instead of food-line chaos</h4><p>Pack lunch and eat near String Lake, Leigh Lake, or Colter Bay. This saves time and keeps the day flexible.</p><div class="tags"><span class="tag food">Picnic</span></div></div></div>
+          <div class="item"><div class="time">Afternoon</div><div class="item-main"><h4>Jackson Lake · Willow Flats · Colter Bay</h4><p>Use the afternoon for north Grand Teton scenery, then return to your same Jackson/Teton base. This avoids packing up after a sporty day.</p><div class="tags"><span class="tag drive">Scenic drive</span><span class="tag wildlife">Wildlife chance</span></div></div></div>
+          <div class="item"><div class="time">Night</div><div class="item-main"><h4>Sleep in the same Grand Teton base</h4><p><b>Recommended:</b> book the same place for Nights 1–2 so you do not repack after biking and hiking. Best order: Moose/Jackson first, Victor studio second, Driggs private room third. Victor/Driggs add drive time, but staying two nights makes them more manageable.</p><div class="tags"><span class="tag sleep">Night 2 same stay</span><span class="tag sleep">Moose/Jackson best</span><span class="tag sleep">Victor backup</span></div></div></div>
+        </div></article>
+
+        <article class="day-card"><div class="day-head"><div class="day-num">3</div><div><h3>Sat Jun 20 · Yellowstone geothermal day</h3><p>Boardwalk miles, geysers, colorful basins, and Grand Prismatic from above.</p></div><div class="day-theme">Geyser walks</div></div><div class="timeline">
+          <div class="item"><div class="time">Very early</div><div class="item-main"><h4>Drive from Jackson/Teton base into Yellowstone</h4><p>Start very early because Saturday of Juneteenth weekend will be busy. Fill gas before entering, carry food, and have your park pass ready. If buying passes separately, confirm both <b>Grand Teton</b> and <b>Yellowstone</b> entry coverage before the trip.</p><div class="tags"><span class="tag drive">Long drive</span><span class="tag sleep">Park pass</span><span class="tag food">Pack lunch</span></div></div></div>
+          <div class="item"><div class="time">Morning</div><div class="item-main"><h4>West Thumb Geyser Basin</h4><p>A compact boardwalk beside Yellowstone Lake. It is a beautiful first Yellowstone stop and doesn’t require a long hike.</p><div class="tags"><span class="tag geyser">Geyser basin</span></div></div></div>
+          <div class="item"><div class="time">Midday</div><div class="item-main"><h4>Old Faithful + Upper Geyser Basin walk</h4><p>Do not just watch Old Faithful and leave. Walk 2–3 miles of boardwalk toward Castle Geyser, Grand Geyser area, and Morning Glory Pool if energy is good.</p><div class="tags"><span class="tag geyser">Must-see</span><span class="tag hike">Walking miles</span></div></div></div>
+          <div class="item"><div class="time">Afternoon</div><div class="item-main"><h4>Black Sand Basin + Grand Prismatic Overlook</h4><p>Use Black Sand Basin as the smaller, prettier-feeling add-on. Then do Grand Prismatic Overlook from Fairy Falls Trailhead for the iconic rainbow view.</p><div class="tags"><span class="tag geyser">Hidden-gem-ish</span><span class="tag hike">Short hike</span></div></div></div>
+          <div class="item"><div class="time">Night</div><div class="item-main"><h4>Sleep in/near Yellowstone</h4><p>Best options: Canyon, Old Faithful, Lake, or West Yellowstone. Do not return to Jackson unless there is no other choice.</p><div class="tags"><span class="tag sleep">Night 3 base</span></div></div></div>
+        </div></article>
+
+        <article class="day-card"><div class="day-head"><div class="day-num">4</div><div><h3>Sun Jun 21 · Yellowstone canyon + wildlife → SLC</h3><p>Big canyon views, a short steep walk if open, and the long drive home.</p></div><div class="day-theme">Canyon finish</div></div><div class="timeline">
+          <div class="item"><div class="time">Sunrise</div><div class="item-main"><h4>Hayden Valley wildlife drive</h4><p>Not a workout, but worth it. Go early for the best wildlife chance and calmer roads.</p><div class="tags"><span class="tag wildlife">Wildlife</span></div></div></div>
+          <div class="item"><div class="time">Morning</div><div class="item-main"><h4>Grand Canyon of the Yellowstone</h4><p>Prioritize Artist Point, Lookout Point, and Brink of Lower Falls if open and you want a short steep challenge.</p><div class="tags"><span class="tag hike">Canyon walk</span><span class="tag hike">Short steep option</span></div></div></div>
+          <div class="item"><div class="time">Optional</div><div class="item-main"><h4>Norris Geyser Basin or Storm Point Trail</h4><p>Choose only one if energy and timing allow. Norris = more geothermal walking. Storm Point = calmer lake/nature walk.</p><div class="tags"><span class="tag geyser">Norris</span><span class="tag hike">Storm Point</span></div></div></div>
+          <div class="item"><div class="time">Afternoon</div><div class="item-main"><h4>Drive back toward Salt Lake City</h4><p>This is a long return day. If you are tired, overnight in West Yellowstone or Idaho Falls and drive back Monday morning.</p><div class="tags"><span class="tag drive">Drive home</span></div></div></div>
+        </div></article>
+      </div>
+    </section>
+
+    <section class="section"><div class="section-title"><div><h2>Activity lineup</h2><p>The trip keeps the active pieces you wanted, without stacking three exhausting things into one day.</p></div></div><div class="cards-grid">
+      <div class="mini-card"><div class="emoji">🚴‍♀️</div><h3>Biking</h3><p>Grand Teton pathway from Moose/Dornans toward Jenny Lake. Flexible distance so it feels fun, not punishing.</p></div>
+      <div class="mini-card"><div class="emoji">🥾</div><h3>Grand Teton hike</h3><p>Hidden Falls + Inspiration Point gives you the classic lake, waterfall, and mountain-view hike from the original plan.</p></div>
+      <div class="mini-card"><div class="emoji">🛶</div><h3>Optional paddle</h3><p>String Lake SUP/kayak only if parking, weather, and energy line up. Otherwise, do the Leigh Lake walk.</p></div>
+      <div class="mini-card"><div class="emoji">🌋</div><h3>Geyser walking</h3><p>West Thumb, Old Faithful, Upper Geyser Basin, Black Sand Basin, and Grand Prismatic Overlook.</p></div>
+      <div class="mini-card"><div class="emoji">🏞️</div><h3>Canyon challenge</h3><p>Artist Point, Lookout Point, and Brink of Lower Falls if open. Short, steep, and worth it.</p></div>
+      <div class="mini-card"><div class="emoji">🦬</div><h3>Wildlife sunrise</h3><p>Hayden Valley early on Day 4. Calm, scenic, and a strong Yellowstone finale.</p></div>
+    </div></section>
+
+    <section class="section"><div class="section-title"><div><h2>Stay options you found</h2><p>These are both Idaho-side Teton Valley options. They can be good value, but they are less ideal than Moose/Jackson for early Grand Teton activities.</p></div></div><div class="stay-grid">
+      <div class="stay-card recommended"><div class="stay-label">Better of the two</div><h3>Taylor Mountain Peak-A-Boo: Suite 3</h3><p><b>Location:</b> Victor, Idaho. Airbnb lists it as an entire rental unit for 2 guests with a studio, 1 bed, and 1 bath. It is rated 4.92 with 326 reviews and highlights a 40-minute drive to Grand Teton National Park.</p><ul><li><b>Best use:</b> Nights 1–2 for the first two Grand Teton days if Jackson/Moose lodging is too expensive.</li><li><b>Why it fits:</b> Private unit, kitchen, parking, strong reviews, and downtown Victor access.</li><li><b>Tradeoff:</b> More driving to Jenny Lake/String Lake and a longer Day 3 start into Yellowstone.</li></ul><div class="verdict"><b>Verdict for Days 1–2:</b> Best Airbnb option you found. Use it if Jackson/Moose is too expensive or unavailable. It is less efficient than staying inside/near Grand Teton, but staying here both nights avoids packing up twice.</div><a class="stay-link" href="https://www.airbnb.com/rooms/20454600?adults=2&check_in=2026-06-17&check_out=2026-06-18&search_mode=regular_search&source_impression_id=p3_1777228462_P3NwrMRMwdBV2Ijn&previous_page_section_name=1000&federated_search_id=aadd8a58-9dc4-4ac6-a4b7-8fd5a05954f0" target="_blank" rel="noreferrer">Open Airbnb listing →</a></div>
+      <div class="stay-card"><div class="stay-label">More rustic / shared</div><h3>Breakfast! Private Room & Bath w/Balcony</h3><p><b>Location:</b> Driggs, Idaho. Airbnb lists it as a private room in a cabin for up to 4 guests, with 1 bedroom, 2 beds, and 1 shared bath. It is rated 4.79 with 175 reviews; the listing says it is about 1 hour from Jackson Hole/Grand Teton and 2 hours from Yellowstone.</p><ul><li><b>Best use:</b> Secondary backup for Nights 1–2 only if price/availability is much better.</li><li><b>Why it fits:</b> Breakfast, mountain views, quiet area, and lower-key Teton Valley vibe.</li><li><b>Tradeoff:</b> Shared spaces, house rules, and farther from the Grand Teton activity start points.</li></ul><div class="verdict"><b>Verdict for Days 1–2:</b> Usable, but less ideal for this itinerary. Choose it only if you are okay with a more rustic/shared setup and extra driving after early park mornings.</div><a class="stay-link" href="https://www.airbnb.com/rooms/13401688?adults=2&check_in=2026-06-17&check_out=2026-06-18&search_mode=regular_search&source_impression_id=p3_1777228462_P3G9RKnimojuY1bF&previous_page_section_name=1000&federated_search_id=aadd8a58-9dc4-4ac6-a4b7-8fd5a05954f0" target="_blank" rel="noreferrer">Open Airbnb listing →</a></div>
+    </div></section>
+
+    <section class="section"><div class="section-title"><div><h2>Book-first checklist</h2><p>Use this to lock the trip in the right order. Lodging placement matters more than anything else.</p></div></div><div class="checklist">
+      <label class="check"><input type="checkbox"><span><b>Nights 1–2 lodging</b><br>Book one place for both Grand Teton days. Priority: Moose/Jackson → Victor studio → Driggs private room.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Night 3 lodging in/near Yellowstone</b><br>West Yellowstone, Canyon, Old Faithful, Lake, or Grant.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Backup lodging plan</b><br>If Yellowstone lodging is impossible, stay all 3 nights in Jackson and accept a longer Yellowstone day.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Bike rental</b><br>Reserve for Day 1 afternoon. Teton Village Sports: 307-733-2181 · tetonvillagesports.com. Dornan's Adventure Sports: 307-733-3307 · dornans.com.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Jenny Lake boat shuttle</b><br>Reserve for Hidden Falls + Inspiration Point. Original contact: jennylakeboating.com · 307-734-9227.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Optional SUP/kayak</b><br>Book only if logistics are easy. SUPerior Paddlesports: superiorpaddlesports.com for String Lake delivery/pickup.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Non-motorized boat permit</b><br>Needed if you SUP/kayak inside Grand Teton. Buy online or at Moose / Colter Bay Visitor Center.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Park pass / entry plan</b><br>Confirm Grand Teton + Yellowstone entry coverage or bring America the Beautiful pass if using one.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Bear spray</b><br>Rent or buy before hiking. Bear Aware rental: Jackson Hole Airport baggage claim. For park questions: Grand Teton Ranger Info 307-739-3399.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Hiking + weather layers</b><br>Waterproof hiking shoes, moisture-wicking layers, rain jacket, sunglasses, sunscreen SPF 50+.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Water activity gear</b><br>Swimwear, water shoes, dry bag, towel, and change of clothes if doing SUP/kayak.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Snacks + cooler</b><br>Trail mix, protein bars, fruit, sandwiches, electrolyte packets, and picnic lunch supplies.</span></label>
+      <label class="check"><input type="checkbox"><span><b>Offline maps + chargers</b><br>Download Grand Teton + Yellowstone maps. Bring car charger, power bank, and extra camera/GoPro batteries.</span></label>
+    </div></section>
+
+    <section class="section"><div class="section-title"><div><h2>Key contacts + links</h2><p>Quick reference for the bookings and park support details from the original checklist.</p></div></div><div class="cards-grid">
+      <div class="mini-card"><div class="emoji">🚴‍♀️</div><h3>Teton Village Sports</h3><ul class="contact-list"><li><b>Use:</b> Bike rentals</li><li><b>Phone:</b> 307-733-2181</li><li><b>Web:</b> tetonvillagesports.com</li></ul></div>
+      <div class="mini-card"><div class="emoji">🚴</div><h3>Dornan's Adventure Sports</h3><ul class="contact-list"><li><b>Use:</b> Bike rentals near Moose</li><li><b>Phone:</b> 307-733-3307</li><li><b>Web:</b> dornans.com</li></ul></div>
+      <div class="mini-card"><div class="emoji">🛶</div><h3>SUPerior Paddlesports</h3><ul class="contact-list"><li><b>Use:</b> SUP / paddleboard rentals</li><li><b>Web:</b> superiorpaddlesports.com</li><li><b>Note:</b> Use for String Lake paddle plan</li></ul></div>
+      <div class="mini-card"><div class="emoji">⛴️</div><h3>Jenny Lake Boating</h3><ul class="contact-list"><li><b>Use:</b> Boat shuttle for Hidden Falls / Inspiration Point</li><li><b>Phone:</b> 307-734-9227</li><li><b>Web:</b> jennylakeboating.com</li></ul></div>
+      <div class="mini-card"><div class="emoji">🐻</div><h3>Bear Aware</h3><ul class="contact-list"><li><b>Use:</b> Bear spray rental</li><li><b>Where:</b> Jackson Hole Airport baggage claim</li><li><b>Note:</b> Pick up before hiking</li></ul></div>
+      <div class="mini-card"><div class="emoji">🏔️</div><h3>Grand Teton Ranger Info</h3><ul class="contact-list"><li><b>Use:</b> Park / trail questions</li><li><b>Phone:</b> 307-739-3399</li><li><b>Hours:</b> Mon–Fri</li></ul></div>
+    </div></section>
+
+    <section class="section"><div class="section-title"><div><h2>Crowd-smart rules</h2><p>Juneteenth weekend will be busy. These are the practical rules worth keeping visible.</p></div></div><div class="cards-grid">
+      <div class="mini-card"><div class="emoji">🌅</div><h3>Start early</h3><p>Popular parking areas can become stressful by late morning. The first two hours of the day are your superpower.</p></div>
+      <div class="mini-card"><div class="emoji">🥪</div><h3>Pack food</h3><p>Picnic lunches save time, money, and hanger. Keep snacks in the car for Yellowstone.</p></div>
+      <div class="mini-card"><div class="emoji">🧭</div><h3>Keep backups</h3><p>If String Lake is full, go Colter Bay. If Grand Prismatic is packed, do Black Sand Basin first and return later.</p></div>
+    </div></section>
+
+    <section class="footer-note"><h2>Trip mantra</h2><p>Stay two nights. Bike the Tetons. Hike to the waterfall. Keep the key links inside the day plan. Move once for Yellowstone. Walk the geyser basins. Finish at the canyon. Come home tired in the good way.</p></section>
+  </main>
+
+  <div class="progress"><div class="progress-inner"><div class="progress-label">Trip prep</div><div class="track"><div class="fill" id="fill"></div></div><div class="progress-count" id="count">0 / 0</div></div></div>
+
+  <script>
+    const checks = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+    const fill = document.getElementById('fill');
+    const count = document.getElementById('count');
+    const key = 'pranit-shweta-hyrox-trip-checklist';
+
+    function save() {
+      try {
+        localStorage.setItem(key, JSON.stringify(checks.map(c => c.checked)));
+      } catch (e) {}
+    }
+
+    function load() {
+      try {
+        const state = JSON.parse(localStorage.getItem(key));
+        if (Array.isArray(state) && state.length === checks.length) {
+          state.forEach((value, i) => checks[i].checked = value);
+        }
+      } catch (e) {}
+    }
+
+    function update() {
+      const total = checks.length;
+      const done = checks.filter(c => c.checked).length;
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      fill.style.width = pct + '%';
+      count.textContent = `${done} / ${total}`;
+    }
+
+    load();
+    update();
+    checks.forEach(c => c.addEventListener('change', () => { save(); update(); }));
+  </script>
+</body>
+</html>
